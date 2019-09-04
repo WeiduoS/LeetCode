@@ -135,7 +135,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#1-backpack" tabindex="1" class="md-skip">
+      <a href="#2-backpack-0-1-knapsack-problem" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -559,6 +559,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backpack03/" title="Backpack III" class="md-nav__link">
+      Backpack III
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -650,9 +662,9 @@
                   <a href="https://github.com/WeiduoS/LeetCode/edit/master/docs/Algorithm/DynamicProgramming/Backpack/backpack02.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="1-backpack">1. Backpack<a class="headerlink" href="#1-backpack" title="Permanent link">&para;</a></h1>
+                <h1 id="2-backpack-0-1-knapsack-problem">2. Backpack 0-1 knapsack problem<a class="headerlink" href="#2-backpack-0-1-knapsack-problem" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Given n items with size vi (1 &lt;= i &lt;= n), an integer W denotes the size of a backpack. How full you can fill this backpack to maximize the total value?</p>
+<p>Given n items with size wt_i and value v_i (i : 0 ~ n - 1), an integer W denotes the size of a backpack. Each item you can pick one times, How full you can fill this backpack to maximize the total value?</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>If we have 4 items with size [2, 3, 5, 7] with values [1, 2, 2, 6] the backpack size is 11, we can select [2, 4] , so that the max value we can fill this backpack is 8. </p>
 <h2 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h2>
@@ -753,7 +765,7 @@
 </tbody>
 </table>
 <h2 id="transform-function">Transform Function<a class="headerlink" href="#transform-function" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - A[i - 1]] + A[i - 1])
+<div class="codehilite"><pre><span></span>dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - wt[i - 1]] + val[i - 1])
 </pre></div>
 
 
@@ -826,6 +838,20 @@
             </div>
           </a>
         
+        
+          <a href="../backpack03/" title="Backpack III" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Backpack III
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
