@@ -6,6 +6,26 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0001/</loc>
+     <lastmod>2019-09-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0101/</loc>
+     <lastmod>2019-09-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0282/</loc>
+     <lastmod>2019-09-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0339/</loc>
+     <lastmod>2019-09-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack01/</loc>
      <lastmod>2019-09-03</lastmod>
      <changefreq>daily</changefreq>
@@ -13,31 +33,6 @@
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack02/</loc>
      <lastmod>2019-09-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
      <changefreq>daily</changefreq>
     </url>
 </urlset>
