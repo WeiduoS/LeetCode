@@ -1,1 +1,64 @@
-site_name: My Docs
+# Project information
+site_name: "Review for LeetCode"
+site_description: "Personal Review Solutions"
+site_author: "Weiduo Sun"
+site_url: "https://WeiduoS.github.io/LeetCode/"
+
+# Repository
+repo_name: "WeiduoS/LeetCode"
+repo_url: "https://github.com/WeiduoS/LeetCode"
+
+# Copyright
+copyright: "Copyright &copy; 2019 - 2020 Weiduo Sun"
+
+# Configuration
+theme:
+  name: "material"
+  language: "en"
+  palette:
+    primary: "indigo"
+    accent: "indigo"
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
+
+# Customization
+extra:
+  manifest: "manifest.webmanifest"
+  social:
+    - type: "github"
+      link: "https://github.com/squidfunk"
+    - type: "twitter"
+      link: "https://twitter.com/squidfunk"
+    - type: "linkedin"
+      link: "https://linkedin.com/in/squidfunk"
+
+# Google Analytics
+google_analytics:
+  - "UA-XXXXXXXX-X"
+  - "auto"
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+# Index
+nav:
+  - Preface: index.md
+  - LeetCode 1 - 100:
+      - 1 Two Sum: LeetCode/lc0001.md
+  - LeetCode 101 - 200:
+      - 101 Symmetric Tree: LeetCode/lc0101.md
+  - LeetCode 201 - 300:
+      - 282 Expression Add Operators: LeetCode/lc0282.md
+  - LeetCode 301 - 400:
+      - 399 Evaluate Division: LeetCode/lc0339.md
+  - Dynamic Programming:
+      - Backpack:
+          - Backpack I: Algorithm/DynamicProgramming/Backpack/backpack01.md
+          - Backpack II: Algorithm/DynamicProgramming/Backpack/backpack02.md
+          - Backpack III: Algorithm/DynamicProgramming/Backpack/backpack03.md
