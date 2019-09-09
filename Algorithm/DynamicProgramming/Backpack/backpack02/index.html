@@ -514,8 +514,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
+  <a href="#example-i" title="Example I" class="md-nav__link">
+    Example I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-ii" title="Example II" class="md-nav__link">
+    Example II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" title="Questions" class="md-nav__link">
+    Questions
   </a>
   
 </li>
@@ -609,8 +623,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
+  <a href="#example-i" title="Example I" class="md-nav__link">
+    Example I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-ii" title="Example II" class="md-nav__link">
+    Example II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" title="Questions" class="md-nav__link">
+    Questions
   </a>
   
 </li>
@@ -664,9 +692,17 @@
                 
                 <h1 id="2-backpack-0-1-knapsack-problem">2. Backpack 0-1 knapsack problem<a class="headerlink" href="#2-backpack-0-1-knapsack-problem" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Given n items with size wt_i and value v_i (i : 0 ~ n - 1), an integer W denotes the size of a backpack. Each item you can pick one times, How full you can fill this backpack to maximize the total value?</p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>If we have 4 items with size [2, 3, 5, 7] with values [1, 2, 2, 6] the backpack size is 11, we can select [2, 4] , so that the max value we can fill this backpack is 8. </p>
+<p>There are n items and a backpack with size m. Given array A representing the size of each item and array V representing the value of each item.</p>
+<h2 id="example-i">Example I<a class="headerlink" href="#example-i" title="Permanent link">&para;</a></h2>
+<p>Input: m = 10, A = [2, 3, 5, 7], V = [1, 5, 2, 4]
+Output: 9
+Explanation: Put A[1] and A[3] into backpack, getting the maximum value V[1] + V[3] = 9 </p>
+<h2 id="example-ii">Example II<a class="headerlink" href="#example-ii" title="Permanent link">&para;</a></h2>
+<p>Input: m = 10, A = [2, 3, 8], V = [2, 5, 8]
+Output: 10
+Explanation: Put A[0] and A[2] into backpack, getting the maximum value V[0] + V[2] = 10 </p>
+<h2 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
+<p>https://www.lintcode.com/problem/backpack-ii/description</p>
 <h2 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -770,38 +806,42 @@
 
 
 <h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">backpack</span><span class="o">(</span><span class="kt">int</span> <span class="n">w</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">wt</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">n</span>  <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-    <span class="kt">int</span><span class="o">[][]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">][</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+<div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">backpack</span><span class="o">(</span><span class="kt">int</span> <span class="n">w</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">wt</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">n</span>  <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">][</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
 
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">w</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
-                <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">],</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]]</span> <span class="o">+</span> <span class="n">val</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
-            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-                <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">];</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">w</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
+                    <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">],</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]]</span> <span class="o">+</span> <span class="n">val</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+                <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                    <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">];</span>
+                <span class="o">}</span>
             <span class="o">}</span>
         <span class="o">}</span>
-    <span class="o">}</span>
 
-    <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">w</span><span class="o">];</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">w</span><span class="o">];</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 
 
 <h2 id="optimize">Optimize<a class="headerlink" href="#optimize" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">backpack</span><span class="o">(</span><span class="kt">int</span> <span class="n">w</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">wt</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+<div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">backpack</span><span class="o">(</span><span class="kt">int</span> <span class="n">w</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">wt</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
 
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">w</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
-                <span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">dp</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]]</span> <span class="o">+</span> <span class="n">val</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">w</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
+                    <span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">dp</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">wt</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]]</span> <span class="o">+</span> <span class="n">val</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+                <span class="o">}</span>
             <span class="o">}</span>
         <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">w</span><span class="o">];</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">w</span><span class="o">];</span>
+    <span class="o">}</span>   
 <span class="o">}</span>
 </pre></div>
                 
