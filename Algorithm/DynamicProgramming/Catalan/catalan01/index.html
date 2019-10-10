@@ -645,8 +645,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#solution" title="Solution" class="md-nav__link">
-    Solution
+  <a href="#solution-i" title="Solution I" class="md-nav__link">
+    Solution I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-ii" title="Solution II" class="md-nav__link">
+    Solution II
   </a>
   
 </li>
@@ -735,8 +742,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#solution" title="Solution" class="md-nav__link">
-    Solution
+  <a href="#solution-i" title="Solution I" class="md-nav__link">
+    Solution I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-ii" title="Solution II" class="md-nav__link">
+    Solution II
   </a>
   
 </li>
@@ -786,8 +800,9 @@ Given n = 3, there are a total of 5 unique BST&#39;s:
 <h2 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h2>
 <p><img alt="img" src="https://img-blog.csdn.net/20160202155030314" /></p>
 <h2 id="transform-function">Transform Function<a class="headerlink" href="#transform-function" title="Permanent link">&para;</a></h2>
-<p><img alt="img" src="../catalan_f01.gif" /></p>
-<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
+<p><img alt="img" src="../catalan_f02.gif" />      <br />
+<img alt="img" src="../catalan_f01.gif" /></p>
+<h2 id="solution-i">Solution I<a class="headerlink" href="#solution-i" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numTrees</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span><span class="o">[]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
@@ -798,6 +813,19 @@ Given n = 3, there are a total of 5 unique BST&#39;s:
             <span class="o">}</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="solution-ii">Solution II<a class="headerlink" href="#solution-ii" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numTrees</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="o">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">/</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">res</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
