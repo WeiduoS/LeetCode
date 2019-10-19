@@ -717,8 +717,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#templatei" title="TemplateI" class="md-nav__link">
-    TemplateI
+  <a href="#template-i" title="Template I" class="md-nav__link">
+    Template I
   </a>
   
 </li>
@@ -731,8 +731,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#templateii" title="TemplateII" class="md-nav__link">
-    TemplateII
+  <a href="#template-ii" title="Template II" class="md-nav__link">
+    Template II
   </a>
   
 </li>
@@ -745,8 +745,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#templateiii" title="TemplateIII" class="md-nav__link">
-    TemplateIII
+  <a href="#template-iii" title="Template III" class="md-nav__link">
+    Template III
   </a>
   
 </li>
@@ -835,8 +835,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#templatei" title="TemplateI" class="md-nav__link">
-    TemplateI
+  <a href="#template-i" title="Template I" class="md-nav__link">
+    Template I
   </a>
   
 </li>
@@ -849,8 +849,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#templateii" title="TemplateII" class="md-nav__link">
-    TemplateII
+  <a href="#template-ii" title="Template II" class="md-nav__link">
+    Template II
   </a>
   
 </li>
@@ -863,8 +863,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#templateiii" title="TemplateIII" class="md-nav__link">
-    TemplateIII
+  <a href="#template-iii" title="Template III" class="md-nav__link">
+    Template III
   </a>
   
 </li>
@@ -916,7 +916,7 @@ dp[i][j] = max |
 </pre></div>
 
 
-<h2 id="templatei">TemplateI<a class="headerlink" href="#templatei" title="Permanent link">&para;</a></h2>
+<h2 id="template-i">Template I<a class="headerlink" href="#template-i" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Submission Result: Memory Limit Exceeded</span>
 <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxProfit</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
@@ -939,96 +939,58 @@ dp[i][j] = max |
 
 
 <h2 id="optimized">Optimized<a class="headerlink" href="#optimized" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>i = 1, j = 3
-dp[1][0] - prices[0] + prices[3]
-dp[1][1] - prices[1] + prices[3]
-dp[1][2] - prices[2] + prices[3]
+<div class="codehilite"><pre><span></span>hold_one[i] = Math.max(-prices[i], hold_one[i - 1])
+hold_one_sell_one = Math.max(hold_one[i - 1] + prices[i], hold_one_sell_one[i - 1])
+hold_two_sell_one = Math.max(hold_one_sell_one[i - 1] - prices[i], hold_two_sell_one[i - 1])
+hold_two_sell_two = Math.max(hold_two_sell_one[i - 1] + prices[i], hold_two_sell_two[i - 1])
 </pre></div>
 
 
-<h2 id="templateii">TemplateII<a class="headerlink" href="#templateii" title="Permanent link">&para;</a></h2>
+<h2 id="template-ii">Template II<a class="headerlink" href="#template-ii" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxProfit</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span> 
-        <span class="k">if</span><span class="o">(</span><span class="n">k</span> <span class="o">&gt;=</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="mi">2</span><span class="o">)</span> <span class="k">return</span> <span class="n">helper</span><span class="o">(</span><span class="n">prices</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">prev</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxProfit</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span><span class="o">(</span><span class="n">prices</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+         <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+         <span class="kt">int</span><span class="o">[]</span> <span class="n">holdOne</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+         <span class="kt">int</span><span class="o">[]</span> <span class="n">holdOneSellOne</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+         <span class="kt">int</span><span class="o">[]</span> <span class="n">holdTwoSellOne</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+         <span class="kt">int</span><span class="o">[]</span> <span class="n">holdTwoSellTwo</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+         <span class="n">holdOne</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+         <span class="n">holdTwoSellOne</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+             <span class="n">holdOne</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">holdOne</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">],</span> <span class="o">-</span><span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+             <span class="n">holdOneSellOne</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">holdOneSellOne</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">],</span> <span class="n">holdOne</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+             <span class="n">holdTwoSellOne</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">holdTwoSellOne</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">],</span> <span class="n">holdOneSellOne</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+             <span class="n">holdTwoSellTwo</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">holdTwoSellTwo</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">],</span> <span class="n">holdTwoSellOne</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+         <span class="o">}</span>
 
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="kt">int</span> <span class="n">maxDiff</span> <span class="o">=</span> <span class="o">-</span><span class="n">prices</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
-                <span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">],</span> <span class="n">maxDiff</span> <span class="o">+</span> <span class="n">prices</span><span class="o">[</span><span class="n">j</span><span class="o">]);</span>
-                <span class="n">maxDiff</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxDiff</span><span class="o">,</span> <span class="n">prev</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">-</span> <span class="n">prices</span><span class="o">[</span><span class="n">j</span><span class="o">]);</span>
-            <span class="o">}</span>
-            <span class="n">prev</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">dp</span><span class="o">,</span> <span class="n">dp</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
-    <span class="o">}</span>
-
-    <span class="kt">int</span> <span class="nf">helper</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">prices</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="n">res</span> <span class="o">+=</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
-    <span class="o">}</span>
+         <span class="k">return</span> <span class="n">holdTwoSellTwo</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 
 
 <h2 id="optimized_1">Optimized<a class="headerlink" href="#optimized_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>transaction on i th day
-
-dp[i] = max{dp[i - 1][no tansaction] + sell, dp[i - 1][do transaction] + buy}
-
-for (int i = 0; i &lt; n; i++)
-{
-    dp[i][no transaction] = max(dp[i - 1][do transaction] + buy, dp[i - 1][no tansaction] + hold );
-    dp[i][do transaction] = max(dp[i - 1][no transaction] + sell, dp[i - 1][do transaction] + hold );
-}
-return dp[n - 1][do transaction];
-
-for (int i = 0; i &lt; n; i++)
-{
-    for (int j = 0; j &lt;= k; j++)
-    {
-      dp[i][no transaction][j] = max {dp[i - 1][do transaction][j - 1] + buy, dp[i - 1][no transaction][j] + hold };
-      dp[i][do transaction][j] = max {dp[i - 1][no transaction][j] + sell, dp[i - 1][do transaction][j] + hold  };
-    }
-}
-return dp[n-1][do transaction];
-
-hold[i][j] = max {sold[i - 1][j - 1] + buy, hold[i - 1][j]}
-sold[i][j] = max {hold[i - 1][j] + sell, sold[i - 1][j]}
+<div class="codehilite"><pre><span></span>int hold_one = Integer.MIN_VALUE;
+int hold_one_sell_one = 0;
+int hold_two_sell_one = Integer.MIN_VALUE;
+int hold_two_sell_two = 0;
 </pre></div>
 
 
-<h2 id="templateiii">TemplateIII<a class="headerlink" href="#templateiii" title="Permanent link">&para;</a></h2>
+<h2 id="template-iii">Template III<a class="headerlink" href="#template-iii" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxProfit</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span> 
-        <span class="k">if</span><span class="o">(</span><span class="n">k</span> <span class="o">&gt;=</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="mi">2</span><span class="o">)</span> <span class="k">return</span> <span class="n">helper</span><span class="o">(</span><span class="n">prices</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-        <span class="kt">int</span><span class="o">[][]</span> <span class="n">hold</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
-        <span class="kt">int</span><span class="o">[][]</span> <span class="n">sold</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
-
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="kt">int</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
-            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
-                <span class="n">hold</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sold</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">diff</span><span class="o">,</span> <span class="n">hold</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="n">diff</span><span class="o">);</span>
-                <span class="n">sold</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">hold</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">],</span> <span class="n">sold</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">]);</span>
-            <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxProfit</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">hold_one</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">,</span> <span class="n">hold_one_sell_one</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">hold_two_sell_one</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">hold_two_sell_two</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">:</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">hold_one</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">hold_one</span><span class="o">,</span> <span class="o">-</span><span class="n">p</span><span class="o">);</span>
+            <span class="n">hold_one_sell_one</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">hold_one</span> <span class="o">+</span> <span class="n">p</span><span class="o">,</span> <span class="n">hold_one_sell_one</span><span class="o">);</span>
+            <span class="n">hold_two_sell_one</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">hold_one_sell_one</span> <span class="o">-</span> <span class="n">p</span><span class="o">,</span> <span class="n">hold_two_sell_one</span><span class="o">);</span>
+            <span class="n">hold_two_sell_two</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">hold_two_sell_one</span> <span class="o">+</span> <span class="n">p</span><span class="o">,</span> <span class="n">hold_two_sell_two</span><span class="o">);</span>
         <span class="o">}</span>
-        <span class="k">return</span> <span class="n">sold</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">k</span><span class="o">];</span>
-    <span class="o">}</span>
-
-    <span class="kt">int</span> <span class="nf">helper</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">prices</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="n">res</span> <span class="o">+=</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">prices</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">hold_two_sell_two</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
