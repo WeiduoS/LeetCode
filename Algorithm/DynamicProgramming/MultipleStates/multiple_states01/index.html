@@ -42,7 +42,7 @@
     
     
       
-        <title>Multiple States I - Review for LeetCode</title>
+        <title>Maximum Product Subarray - Review for LeetCode</title>
       
     
     
@@ -135,7 +135,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#multiple-states" tabindex="1" class="md-skip">
+      <a href="#multiple-states-i" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -160,7 +160,7 @@
               Review for LeetCode
             </span>
             <span class="md-header-nav__topic">
-              Multiple States I
+              Maximum Product Subarray
             </span>
           
         </div>
@@ -621,11 +621,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Multiple States I
+        Maximum Product Subarray
       </label>
     
-    <a href="./" title="Multiple States I" class="md-nav__link md-nav__link--active">
-      Multiple States I
+    <a href="./" title="Maximum Product Subarray" class="md-nav__link md-nav__link--active">
+      Maximum Product Subarray
     </a>
     
       
@@ -653,8 +653,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-i" title="Example I" class="md-nav__link">
-    Example I
+  <a href="#example-i" title="Example I:" class="md-nav__link">
+    Example I:
   </a>
   
 </li>
@@ -681,8 +681,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#template" title="Template" class="md-nav__link">
-    Template
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
   </a>
   
 </li>
@@ -704,8 +704,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../multiple_states02/" title="Multiple States II" class="md-nav__link">
-      Multiple States II
+    <a href="../multiple_states02/" title="House Robber I" class="md-nav__link">
+      House Robber I
     </a>
   </li>
 
@@ -716,8 +716,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../multiple_states03/" title="Multiple States III" class="md-nav__link">
-      Multiple States III
+    <a href="../multiple_states03/" title="House Robber II" class="md-nav__link">
+      House Robber II
     </a>
   </li>
 
@@ -728,8 +728,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../multiple_states04/" title="Multiple States IV" class="md-nav__link">
-      Multiple States IV
+    <a href="../multiple_states04/" title="House Robber III" class="md-nav__link">
+      House Robber III
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multiple_states05/" title="Best Time to Buy and Sell Stock I" class="md-nav__link">
+      Best Time to Buy and Sell Stock I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multiple_states06/" title="Best Time to Buy and Sell Stock III" class="md-nav__link">
+      Best Time to Buy and Sell Stock III
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multiple_states07/" title="Best Time to Buy and Sell Stock IV" class="md-nav__link">
+      Best Time to Buy and Sell Stock IV
     </a>
   </li>
 
@@ -779,8 +815,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-i" title="Example I" class="md-nav__link">
-    Example I
+  <a href="#example-i" title="Example I:" class="md-nav__link">
+    Example I:
   </a>
   
 </li>
@@ -807,8 +843,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#template" title="Template" class="md-nav__link">
-    Template
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
   </a>
   
 </li>
@@ -832,12 +868,12 @@
                   <a href="https://github.com/WeiduoS/LeetCode/edit/master/docs/Algorithm/DynamicProgramming/MultipleStates/multiple_states01.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="multiple-states">Multiple States<a class="headerlink" href="#multiple-states" title="Permanent link">&para;</a></h1>
+                <h1 id="multiple-states-i">Multiple States I<a class="headerlink" href="#multiple-states-i" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
 <h2 id="question-link">Question Link<a class="headerlink" href="#question-link" title="Permanent link">&para;</a></h2>
 <p>https://leetcode.com/problems/maximum-product-subarray/description/</p>
-<h2 id="example-i">Example I<a class="headerlink" href="#example-i" title="Permanent link">&para;</a></h2>
+<h2 id="example-i">Example I:<a class="headerlink" href="#example-i" title="Permanent link">&para;</a></h2>
 <p>Input: [2,3,-2,4]
 Output: 6
 Explanation: [2,3] has the largest product 6.</p>
@@ -857,7 +893,7 @@ g(k) = min( g(k-1) A[k], A[k], f(k-1) A[k] )
 </pre></div>
 
 
-<h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h2>
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxProduct</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">assert</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">;</span>
@@ -907,13 +943,13 @@ g(k) = min( g(k-1) A[k], A[k], f(k-1) A[k] )
           </a>
         
         
-          <a href="../multiple_states02/" title="Multiple States II" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../multiple_states02/" title="House Robber I" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Multiple States II
+                House Robber I
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

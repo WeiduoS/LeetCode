@@ -2,87 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0001/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0101/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0282/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/LeetCode/lc0339/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack01/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack02/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack03/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack04/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack05/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack06/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Backpack/backpack07/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/Catalan/catalan01/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/MultipleStates/multiple_states01/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/MultipleStates/multiple_states02/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/MultipleStates/multiple_states03/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/MultipleStates/multiple_states04/</loc>
-     <lastmod>2019-10-19</lastmod>
+     <lastmod>2019-10-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/MultipleStates/multiple_states05/</loc>
+     <lastmod>2019-10-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/MultipleStates/multiple_states06/</loc>
+     <lastmod>2019-10-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://WeiduoS.github.io/LeetCode/Algorithm/DynamicProgramming/MultipleStates/multiple_states07/</loc>
+     <lastmod>2019-10-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
